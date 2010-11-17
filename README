@@ -1,1 +1,8 @@
 NetBreakServer for CS2114 Group Project
+
+The NetBreakServer is currently lauched by calling `java NetBreakServer`.
+This will lauch the server on port 2114. Optionally you can pass in an
+alternative port as a command line argument.
+
+Currently, logging in will give you a "WAIT" prompt, then once you have
+been matched it will send the IP of the matched partner.
