@@ -112,7 +112,7 @@ public class ClientConnection
     {
         try
         {
-            conn.close();
+            close();
         }
         catch (IOException e)
         {
