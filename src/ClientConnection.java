@@ -113,8 +113,9 @@ public class ClientConnection
         try
         {
             close();
+            super.finalize();
         }
-        catch (IOException e)
+        catch (Throwable e)
         {
             System.err.println("Error closing client socket.");
         }

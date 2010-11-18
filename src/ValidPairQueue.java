@@ -144,7 +144,7 @@ public class ValidPairQueue<Item extends Validity>
     {
         Node<Item> current = head;
 
-        while( current.getNext() != tail )
+        while ( current.getNext() != tail )
         {
             current = current.getNext();
             if (!current.getData().isValid())

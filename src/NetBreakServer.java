@@ -22,7 +22,7 @@ import java.net.ServerSocket;
 
 public class NetBreakServer
 {
-    private static int DEFAULT_PORT = 2114;
+    private static int DEFAULTPORT = 2114;
 
     private ServerSocket server;
     private ValidPairQueue<ClientConnection> clients;
@@ -35,7 +35,7 @@ public class NetBreakServer
     public static void main( String[] argv )
     {
         // Determine the port.
-        int port = (argv.length == 0 ? DEFAULT_PORT : Integer.valueOf(argv[0]));
+        int port = (argv.length == 0 ? DEFAULTPORT : Integer.valueOf(argv[0]));
 
         // Launch the game server.
         new NetBreakServer(port);
@@ -140,11 +140,13 @@ public class NetBreakServer
         try
         {
             server.close();
+            super.finalize();
         }
-        catch (IOException e)
+        catch (Throwable e)
         {
-            System.err.println("Could not close socket.");
+            System.err.println("Error collecting the server.");
         }
+
     }
 }
 
